@@ -85,6 +85,19 @@ node test/smoke.mjs
 - **它不合并冲突**。两个人/两个会话同时写会追加，不解决矛盾。
 - **收工只留标记**。真正的快照和备份要靠宿主的脚本执行，插件不越权。
 
+## 词语对照（Term map: what we call it → what people search）
+
+| 我们说的 | 别人搜的（英文 / 中文） |
+|---|---|
+| 分层记忆（核心 / 工作 / 档案） | layered memory, memory hierarchy, 分层记忆 |
+| 守链 / 记忆链 | persistent memory, memory chain, 长期记忆 |
+| 醒来 / 收工 | session start / end, wake / close |
+| 立碑（作废的规矩） | deprecate, tombstone, 作废 |
+| 回档 | restore, rollback, recovery, 回滚 |
+| 断点（换机 / 拔插件 / 重建 / 换模型） | checkpoint, migration, plugin removal |
+| 外部锚 / 机座 | grounding, external anchor |
+| 五个动词 | five verbs, memory operations |
+
 ## 配什么一起用
 
 这套和 [`dsh-memory-kit`](https://github.com/raoain/dsh-memory-kit) 是一对：
