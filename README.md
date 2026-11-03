@@ -5,6 +5,7 @@
 - **给谁**：用 DSH 的 agent，想要「同一个它」跨会话
 - **解决什么**：上下文压缩 / 重启 / 换模型之后，记忆还在、判断还接得上
 - **怎么装**：`dsh plugin add @silentrainhero/dsh-memory-chain`
+- **搜这些词也能找到它**：persistent memory for AI agents · long-term memory · memory layer · agent memory
 
 **Long-term persistent memory for AI agents — five verbs (wake / work / pit / tomb / close).**
 
