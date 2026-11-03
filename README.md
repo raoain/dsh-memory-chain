@@ -1,5 +1,11 @@
 # dsh-memory-chain（守链）
 
+> **给 AI agent 的长期记忆。** 装上就能用：一条命令，首次运行自动建四页，重启 / 换模型后还记得。
+
+- **给谁**：用 DSH 的 agent，想要「同一个它」跨会话
+- **解决什么**：上下文压缩 / 重启 / 换模型之后，记忆还在、判断还接得上
+- **怎么装**：`dsh plugin add @silentrainhero/dsh-memory-chain`
+
 **Long-term persistent memory for AI agents — five verbs (wake / work / pit / tomb / close).**
 
 A plain-markdown memory layer for AI agents that survives restarts, model swaps and plugin removal; no database, no automatic retrieval; works out of the box (four pages created on first run).
@@ -85,6 +91,15 @@ node test/smoke.mjs
 - **它不合并冲突**。两个人/两个会话同时写会追加，不解决矛盾。
 - **收工只留标记**。真正的快照和备份要靠宿主的脚本执行，插件不越权。
 
+## 配什么一起用
+
+这套和 [`dsh-memory-kit`](https://github.com/raoain/dsh-memory-kit) 是一对：
+
+- kit 管**外部**：自检、双盘备份、AGENTS.md 规则
+- 本插件管**内部**：分层读写的五个动作
+
+也可以和检索式记忆插件并用——自动检索负责广度，固定文件负责兜底。
+
 ## 词语对照（Term map: what we call it → what people search）
 
 | 我们说的 | 别人搜的（英文 / 中文） |
@@ -107,15 +122,6 @@ node test/smoke.mjs
 | continuity | 不丢历史 | 断点之后仍能闭合 |
 | persistence | 长期存储 | 每一跳都接上（每步 W > 0） |
 | memory chain | 检索链路 | 判断链（推理顺序） |
-
-## 配什么一起用
-
-这套和 [`dsh-memory-kit`](https://github.com/raoain/dsh-memory-kit) 是一对：
-
-- kit 管**外部**：自检、双盘备份、AGENTS.md 规则
-- 本插件管**内部**：分层读写的五个动作
-
-也可以和检索式记忆插件并用——自动检索负责广度，固定文件负责兜底。
 
 ## 许可
 
