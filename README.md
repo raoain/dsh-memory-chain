@@ -1,8 +1,8 @@
 # dsh-memory-chain（守链）
 
-**A layered memory for DSH agents — five verbs (wake / work / pit / tomb / close).**
+**Long-term persistent memory for AI agents — five verbs (wake / work / pit / tomb / close).**
 
-Persistent agent memory that survives restarts, model swaps and plugin removal — plain markdown files, no database, no automatic retrieval, works out of the box (four pages created on first run).
+A plain-markdown memory layer for AI agents that survives restarts, model swaps and plugin removal; no database, no automatic retrieval; works out of the box (four pages created on first run).
 
 > 给 agent 的分层记忆，五个动词：**醒来 / 干活 / 遇坑 / 立碑 / 收工**
 >
