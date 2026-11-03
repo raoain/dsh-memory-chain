@@ -56,7 +56,9 @@ dsh plugin --profile <profile> add link:<本目录绝对路径>
 
 装完**重载或重启 DSH**，五个工具就会出现。
 
-配置数据目录（可选，默认 `F:\Tools\coo-day1\notebook`）：
+默认数据目录是 `~/.dsh/notebook`，**首次运行会自动建出四页**（核心 / 工作 / 档案 / 墓碑），装上就能用。
+
+要换目录时（可选）：
 
 ```yaml
 - id: dsh-notebook
