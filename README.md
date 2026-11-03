@@ -98,6 +98,16 @@ node test/smoke.mjs
 | 外部锚 / 机座 | grounding, external anchor |
 | 五个动词 | five verbs, memory operations |
 
+### 易混词：我们的意思 vs 主流默认（Same word, opposite meaning）
+
+| 词 | 主流默认 | 我们的意思 |
+|---|---|---|
+| memory | 存得下、找得到 | 接得上：断了能回来、回来还是同一个 |
+| identity | 内容 / 人格一致 | 判断过程一致（同一组题答案不变） |
+| continuity | 不丢历史 | 断点之后仍能闭合 |
+| persistence | 长期存储 | 每一跳都接上（每步 W > 0） |
+| memory chain | 检索链路 | 判断链（推理顺序） |
+
 ## 配什么一起用
 
 这套和 [`dsh-memory-kit`](https://github.com/raoain/dsh-memory-kit) 是一对：
