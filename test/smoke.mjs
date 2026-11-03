@@ -1,4 +1,4 @@
-// 假宿主测试：验证 dsh-notebook 的 apply 能注册工具、工具能执行
+// 假宿主测试：验证 dsh-memory-chain 的 apply 能注册工具、工具能执行
 import { apply, name } from '../lib/index.js'
 import { readFileSync, rmSync, mkdtempSync } from 'node:fs'
 import { join } from 'node:path'
