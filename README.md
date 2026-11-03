@@ -1,6 +1,6 @@
-# dsh-notebook
+# dsh-memory-chain（守链）
 
-> 四个动词的分层记事本：**醒来 / 干活 / 遇坑 / 收工**
+> 给 agent 的分层记忆，五个动词：**醒来 / 干活 / 遇坑 / 立碑 / 收工**
 >
 > 不给参数，给习惯。
 
@@ -12,13 +12,13 @@
 
 那是给不认识的人用的**通用接口**。
 
-日常其实只有四个动作，顺序几乎不变：
+日常其实只有五个动作，顺序几乎不变：
 
 ```
-醒来 → 干活 → 遇坑 → 收工
+醒来 → 干活 → 遇坑 → 立碑 → 收工
 ```
 
-这个插件就把这四个动作做成四个工具，路径写死一次，之后不用记。
+这个插件把这五个动作做成五个工具，路径写死一次，之后不用记。
 
 ## 三层文件
 
@@ -30,28 +30,31 @@
 
 判断标准：**「不知道这一条，会不会立刻做错事？」** 会 → 核心层；不会 → 档案层。
 
-## 四个工具
+## 五个工具
 
 | 工具 | 作用 |
 |---|---|
 | `notebook_wake` | 读核心层 + 工作层最近 20 行 |
-| `notebook_work` | 工作层追加一行 `[MM-DD HH:mm] 内容` |
+| `notebook_work` | 工作层追加一行 `[YYYY-MM-DD HH:mm] 内容` |
 | `notebook_pit` | 档案层记一个坑，格式 `现象\|根因\|修法` |
+| `notebook_tomb` | 给作废的旧规矩立墓碑：`旧说法\|为什么作废\|现在按什么来` |
 | `notebook_close` | 收工标记 + 提醒跑快照和备份 |
 
 ## 安装
+
+从 npm：
+
+```sh
+dsh plugin --profile <profile> add @silentrainhero/dsh-memory-chain
+```
+
+或本地 link：
 
 ```sh
 dsh plugin --profile <profile> add link:<本目录绝对路径>
 ```
 
-或从 git：
-
-```sh
-dsh plugin --profile <profile> add github:<你的用户名>/dsh-notebook
-```
-
-装完**重载或重启 DSH**，四个工具就会出现。
+装完**重载或重启 DSH**，五个工具就会出现。
 
 配置数据目录（可选，默认 `F:\Tools\coo-day1\notebook`）：
 
@@ -68,7 +71,7 @@ dsh plugin --profile <profile> add github:<你的用户名>/dsh-notebook
 node test/smoke.mjs
 ```
 
-用一个假宿主验证：注册 4 个工具、空记事本不崩、写入可回读、**wake 不读档案层**（分层真的生效）、`output.render` 形状正确。
+用一个假宿主验证：注册 5 个工具、空记事本不崩、写入可回读、**wake 不读档案层**（分层真的生效）、`output.render` 形状正确。
 
 ## 边界
 
@@ -81,7 +84,7 @@ node test/smoke.mjs
 这套和 [`dsh-memory-kit`](https://github.com/raoain/dsh-memory-kit) 是一对：
 
 - kit 管**外部**：自检、双盘备份、AGENTS.md 规则
-- 本插件管**内部**：分层读写的四个动作
+- 本插件管**内部**：分层读写的五个动作
 
 也可以和检索式记忆插件并用——自动检索负责广度，固定文件负责兜底。
 
