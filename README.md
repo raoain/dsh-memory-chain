@@ -61,8 +61,8 @@ dsh plugin --profile <profile> add link:<本目录绝对路径>
 要换目录时（可选）：
 
 ```yaml
-- id: dsh-notebook
-  name: dsh-notebook
+- id: dsh-memory-chain
+  name: dsh-memory-chain
   config:
     root: 'D:\我的记事本'
 ```
