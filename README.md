@@ -1,12 +1,16 @@
 # dsh-memory-chain（守链）
 
+**A layered memory for DSH agents — five verbs (wake / work / pit / tomb / close).**
+
+Persistent agent memory that survives restarts, model swaps and plugin removal — plain markdown files, no database, no automatic retrieval, works out of the box (four pages created on first run).
+
 > 给 agent 的分层记忆，五个动词：**醒来 / 干活 / 遇坑 / 立碑 / 收工**
 >
 > 不给参数，给习惯。
 
 ---
 
-## 为什么不是又一个记忆插件
+## 为什么不是又一个记忆插件（Why not another memory plugin: agent memory, persistence）
 
 大多数记忆插件问的是：「要开自动检索吗？间隔几小时？权重多少？」
 
@@ -20,7 +24,7 @@
 
 这个插件把这五个动作做成五个工具，路径写死一次，之后不用记。
 
-## 三层文件
+## 三层文件（Three layers: core / work / archive）
 
 | 层 | 文件 | 何时读 |
 |---|---|---|
@@ -30,7 +34,7 @@
 
 判断标准：**「不知道这一条，会不会立刻做错事？」** 会 → 核心层；不会 → 档案层。
 
-## 五个工具
+## 五个工具（Five verbs / tools）
 
 | 工具 | 作用 |
 |---|---|
@@ -40,7 +44,7 @@
 | `notebook_tomb` | 给作废的旧规矩立墓碑：`旧说法\|为什么作废\|现在按什么来` |
 | `notebook_close` | 收工标记 + 提醒跑快照和备份 |
 
-## 安装
+## 安装（Install: npm / dsh plugin add）
 
 从 npm：
 
@@ -75,7 +79,7 @@ node test/smoke.mjs
 
 用一个假宿主验证：注册 5 个工具、空记事本不崩、写入可回读、**wake 不读档案层**（分层真的生效）、`output.render` 形状正确。
 
-## 边界
+## 边界（Limits: no retrieval, no conflict merge）
 
 - **它不检索**。没有关键词命中、没有相似度、没有自动注入。找不到就是没写，这一点是刻意的——检索式的「找不到」和「没写」看起来一样，很容易误判。
 - **它不合并冲突**。两个人/两个会话同时写会追加，不解决矛盾。
