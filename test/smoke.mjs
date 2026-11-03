@@ -18,11 +18,11 @@ const ok = (cond, label) => { console.log((cond ? '✅ ' : '❌ ') + label); if 
 
 console.log('插件名:', name)
 console.log('注册的工具:', [...tools.keys()].join(', '))
-ok(tools.size === 4, '注册了 4 个工具')
+ok(tools.size === 5, '注册了 5 个工具')
 
-// 空记事本：wake 应返回 ok=false，不该崩
+// 空记事本：自动初始化模板后，wake 应返回内容且不崩
 const wake0 = tools.get('notebook_wake').execute()
-ok(wake0.ok === false, '空记事本时 wake 返回 ok=false（不崩）')
+ok(wake0.ok === true && String(wake0.text).length > 0, '空记事本自动初始化后 wake 返回内容（不崩）')
 
 // 写入工作层
 tools.get('notebook_work').execute({ text: '测试写入' })
