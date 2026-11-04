@@ -3,4 +3,4 @@
 
 - insert:
     - id: dsh-notebook
-      name: dsh-notebook
+      name: @silentrainhero/dsh-memory-chain
