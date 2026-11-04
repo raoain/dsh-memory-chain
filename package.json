@@ -1,6 +1,6 @@
 {
     "name":  "@silentrainhero/dsh-memory-chain",
-    "version": "0.4.3",
+    "version": "0.4.4",
     "description":  "守链：给 agent 的分层记忆，五个动词（醒来/干活/遇坑/立碑/收工）。装上自动建四页，开箱即用。",
     "keywords":  [
                      "dsh",
